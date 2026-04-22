@@ -6,41 +6,78 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <h2>Traffic Predictor</h2>
+    <ul>
+      <li><a href="#" id="homeLink">Home</a></li>
+      <li><a href="#" id="loginLink">Login</a></li>
+      <li><a href="#" id="registerLink">Register</a></li>
+    </ul>
   </nav>
 
-  <div class="container">
+  <!-- Home Section -->
+  <div class="container" id="homeSection">
     <h1>Traffic Prediction System</h1>
     <form id="predictForm">
       <div class="form-group">
         <label for="hour">Hour of Day</label>
         <input type="number" id="hour" min="0" max="23" required>
       </div>
-
       <div class="form-group">
         <label for="day">Day of Week (1=Mon, 7=Sun)</label>
         <input type="number" id="day" min="1" max="7" required>
       </div>
-
       <div class="form-group">
         <label for="vehicle_count">Vehicle Count</label>
         <input type="number" id="vehicle_count" required>
       </div>
-
       <button type="submit">Predict</button>
     </form>
-
     <div id="resultBox">
       <h2>Prediction Result</h2>
       <p id="result">Enter values and click Predict</p>
+      <canvas id="trafficChart"></canvas>
     </div>
+  </div>
+
+  <!-- Login Section -->
+  <div class="container hidden" id="loginSection">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Register Section -->
+  <div class="container hidden" id="registerSection">
+    <h1>Register</h1>
+    <form id="registerForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="registerEmail" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="registerPassword" required>
+      </div>
+      <button type="submit">Register</button>
+    </form>
   </div>
 
   <footer>
     <p>Traffic Prediction Project © 2026</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
